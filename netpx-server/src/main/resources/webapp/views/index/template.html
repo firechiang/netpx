@@ -1,0 +1,25 @@
+<section class="home-index">
+	<header class="home-index-header">
+		<router-link class="logo" :to="{path: '/login'}">netpx</router-link>
+		<div class="user-info">
+			<span v-text="user.username"></span>
+			<el-dropdown trigger="click"> 
+			    <span class="el-dropdown-link"> 
+				    <img :src="user.avatar"/>
+				</span>
+			    <el-dropdown-menu slot="dropdown"> 
+			        <el-dropdown-item>个人信息</el-dropdown-item>
+			        <el-dropdown-item>设置</el-dropdown-item> 
+			        <el-dropdown-item @click.native="logout">注销</el-dropdown-item>
+			    </el-dropdown-menu> 
+			</el-dropdown>
+		</div>
+	</header>
+	<div class="home-index-body">
+		<div class="home-index-content-wrapper">
+			<section class="home-index-content">
+			    <router-view></router-view>
+			</section>
+		</div>
+	</div>
+</section>

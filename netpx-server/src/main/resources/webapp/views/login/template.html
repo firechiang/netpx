@@ -1,0 +1,20 @@
+<div>
+	<div class="login-page" @keyup.enter="login">
+		<div class="login-form">
+			<div class="input-group">
+				<div class="title">Netpx</div>
+				<el-input :autofocus="true" placeholder="请输入用户名" v-model="user.username"> </el-input>
+			</div>
+			<div class="input-group">
+				<el-input placeholder="请输入密码" type="password" v-model="user.password"> </el-input>
+			</div>
+			<div class="input-group">
+				<label>记住我？</label>
+				<el-switch v-model="user.rememberMe" on-text="" off-text=""></el-switch>
+			</div>
+			<div class="input-group">
+				<el-button @click.native="login" type="primary" :loading="loginLoading">{{loginBtnText}}</el-button>
+			</div>
+		</div>
+	</div>
+</div>
